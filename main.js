@@ -1,6 +1,8 @@
 const typingText = document.querySelector(".typing-text p");
 inpField = document.querySelector(".wrapper .input-field");
 
+let charIndex = 0;
+
 function randomParagraph() {
     //getting random number and it'll always be less than the paragraphs length
     let randIndex = Math.floor(Math.random() * paragraphs.length);
@@ -15,4 +17,10 @@ function randomParagraph() {
     typingText.addEventListener("click", () => inpField.focus());
 }
 
+function initTyping () {
+    const characters = typingText.querySelectorAll("span");
+    let typedChar = inpField.value.split("")[0];
+}
+
 randomParagraph();
+inpField.addEventListener("input", initTyping);
