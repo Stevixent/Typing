@@ -46,7 +46,22 @@ body{
     justify-content: space-between;
     margin-top: 17px;
     padding: 12px 0;
+    align-items: center;
     border-top: 1px solid #ccc;
+}
+.content button{
+    border: none;
+    outline: none;
+    width: 105px;
+    font-size: 16px;
+    background: #17a2b7;
+    padding: 8px 0;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.content button:active{
+    
 }
 .content .result-details{
     width: calc(100% - 140px);
@@ -61,7 +76,7 @@ body{
 }
 .result-details li:not(:first-child){
     border-left: 1px solid #ccc;
-    padding: 12px;
+    padding-left: 22px;
 }
 .result-details li p{
     font-size: 18px;
