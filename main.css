@@ -59,9 +59,10 @@ body{
     color: #fff;
     cursor: pointer;
     border-radius: 5px;
+    transition: transform 0.3s ease;
 }
 .content button:active{
-    
+   transform: scale(0.97); 
 }
 .content .result-details{
     width: calc(100% - 140px);
