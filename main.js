@@ -27,6 +27,7 @@ function initTyping () {
         characters[charIndex].classList.add("incorrect");
     }
     charIndex++; //increment charIndex either user typed correct or incorrect characters
+    characters[charIndex].classList.add("active");
 }
 
 randomParagraph();
