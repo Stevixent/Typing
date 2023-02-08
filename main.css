@@ -26,8 +26,34 @@ body{
     border-radius: 10px;
 }
 
+.content-box .typing-text{
+    max-height: 255px;
+    overflow-y: auto;
+}
+
+.typing-text::-webkit-scrollbar{
+    width: 0;
+}
+
 .typing-text p{
     font-size: 21px;
     text-align: justify;
     letter-spacing: 1px;
+    word-break: break-all;
+}
+.content-box .content{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 17px;
+    padding: 12px 0;
+    border-top: 1px solid #ccc;
+}
+.content .result-details{
+    width: calc(100% - 140px);
+    display: flex;
+    justify-content: space-between;
+}
+.result-details li{
+    list-style: none;
+    display: flex;
 }
