@@ -57,3 +57,11 @@ body{
     list-style: none;
     display: flex;
 }
+.result-details li p{
+    font-size: 18px;
+}
+.result-details li span{
+    display: block;
+    font-size: 20px;
+    margin-left: 10px;
+}
