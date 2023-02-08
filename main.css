@@ -41,6 +41,15 @@ body{
     letter-spacing: 1px;
     word-break: break-all;
 }
+.typing-text p span.correct{
+    color: #56964f;
+}
+.typing-text p span.incorrect{
+    color: #cb3439;
+    background: #ffc0cb;
+    outline: 1px solid #ffff;
+    border-radius: 4px;
+}
 .content-box .content{
     display: flex;
     justify-content: space-between;

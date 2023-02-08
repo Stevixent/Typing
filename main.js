@@ -19,7 +19,14 @@ function randomParagraph() {
 
 function initTyping () {
     const characters = typingText.querySelectorAll("span");
-    let typedChar = inpField.value.split("")[0];
+    let typedChar = inpField.value.split("")[charIndex];
+    if (characters[charIndex].innerText === typedChar) {
+        // if user typed character and it matches add the correct class else add the incorrect class
+        characters[charIndex].classList.add("correct");
+    }else {
+        characters[charIndex].classList.add("incorrect");
+    }
+    charIndex++; //increment charIndex either user typed correct or incorrect characters
 }
 
 randomParagraph();
