@@ -54,8 +54,14 @@ body{
     justify-content: space-between;
 }
 .result-details li{
+    height: 22px;
     list-style: none;
     display: flex;
+    align-items: center;
+}
+.result-details li:not(:first-child){
+    border-left: 1px solid #ccc;
+    padding: 12px;
 }
 .result-details li p{
     font-size: 18px;
@@ -64,4 +70,10 @@ body{
     display: block;
     font-size: 20px;
     margin-left: 10px;
+}
+.result-details li b{
+    font-weight: 500;
+}
+.result-details li:not(:first-child) span{
+    font-weight: 500;
 }
