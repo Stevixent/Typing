@@ -1,7 +1,8 @@
 const typingText = document.querySelector(".typing-text p"),
 inpField = document.querySelector(".wrapper .input-field"),
+mistakeTag = document.querySelector(".mistake span");
 
-let charIndex = 0;
+let charIndex =mistakes = 0;
 
 function randomParagraph() {
     //getting random number and it'll always be less than the paragraphs length
