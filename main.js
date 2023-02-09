@@ -1,12 +1,14 @@
 const typingText = document.querySelector(".typing-text p"),
 inpField = document.querySelector(".wrapper .input-field"),
 timeTag = document.querySelector(".time span b")
-mistakeTag = document.querySelector(".mistake span");
+mistakeTag = document.querySelector(".mistake span"),
+wpmTag = document.querySelector(".wpm span"),
+cpmTag = document.querySelector(".cpm span");
 
 let timer,
 maxTime = 60,
 timeLeft = maxTime
-let charIndex =mistakes = 0;
+let charIndex =mistakes = isTyping = 0;
 
 function randomParagraph() {
     //getting random number and it'll always be less than the paragraphs length
@@ -25,7 +27,11 @@ function randomParagraph() {
 function initTyping () {
     const characters = typingText.querySelectorAll("span");
     let typedChar = inpField.value.split("")[charIndex];
-    timer = setInterval(initTimer, 1000);
+    if (!isTyping) {
+        //once timer starts it wont restart again on every key clicked
+        timer = setInterval(initTimer, 1000);
+        isTyping = true;
+    }
     // if user pressed backspace
     if(typedChar == null) {
         //decrease charIndex
@@ -51,6 +57,8 @@ function initTyping () {
     characters[charIndex].classList.add("active");
 
     mistakeTag.innerText = mistakes;
+    cpmTag.innerText = charIndex - mistakes; // cpm won't count mistakes
+    
 }
 
 function initTimer(){
