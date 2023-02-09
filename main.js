@@ -56,9 +56,10 @@ function initTyping () {
     characters.forEach(span => span.classList.remove("active"));
     characters[charIndex].classList.add("active");
 
+    let wpm = Math.round((((charIndex - mistakes) /5) / ())
     mistakeTag.innerText = mistakes;
     cpmTag.innerText = charIndex - mistakes; // cpm won't count mistakes
-    
+
 }
 
 function initTimer(){
