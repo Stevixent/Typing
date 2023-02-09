@@ -1,5 +1,5 @@
-const typingText = document.querySelector(".typing-text p");
-inpField = document.querySelector(".wrapper .input-field");
+const typingText = document.querySelector(".typing-text p"),
+inpField = document.querySelector(".wrapper .input-field"),
 
 let charIndex = 0;
 
@@ -23,6 +23,7 @@ function initTyping () {
     // if user pressed backspace
     if(typedChar == null) {
         charIndex--;
+        characters[charIndex].classList.remove("correct","incorrect");
     } else{
 
         if (characters[charIndex].innerText === typedChar) {
