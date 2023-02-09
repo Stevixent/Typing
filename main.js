@@ -29,14 +29,18 @@ function initTyping () {
 
         if (characters[charIndex].innerText === typedChar) {
         // if user typed character and it matches add the correct class else add the incorrect class
+        //else increment the mistakes and add the incorrect class
         characters[charIndex].classList.add("correct");
     }else {
+        mistakes++;
         characters[charIndex].classList.add("incorrect");
     }
     charIndex++; //increment charIndex either user typed correct or incorrect characters
     }
     characters.forEach(span => span.classList.remove("active"));
     characters[charIndex].classList.add("active");
+
+    mistakeTag.innerText = mistakes;
 }
 
 randomParagraph();
