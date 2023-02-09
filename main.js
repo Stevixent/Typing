@@ -24,6 +24,10 @@ function initTyping () {
     // if user pressed backspace
     if(typedChar == null) {
         charIndex--;
+        // reduce mistakes only if the charIndex span contain incorrect class
+        if (characters[charIndex].classList.contains("incorrect")) {
+           mistakes--; 
+        }
         characters[charIndex].classList.remove("correct","incorrect");
     } else{
 
