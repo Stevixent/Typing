@@ -1,7 +1,11 @@
 const typingText = document.querySelector(".typing-text p"),
 inpField = document.querySelector(".wrapper .input-field"),
+timeTag = document.querySelector(".time span b")
 mistakeTag = document.querySelector(".mistake span");
 
+let timer,
+maxTime = 60,
+timeLeft = maxTime
 let charIndex =mistakes = 0;
 
 function randomParagraph() {
@@ -21,8 +25,10 @@ function randomParagraph() {
 function initTyping () {
     const characters = typingText.querySelectorAll("span");
     let typedChar = inpField.value.split("")[charIndex];
+    timer = setInterval(initTimer, 1000);
     // if user pressed backspace
     if(typedChar == null) {
+        //decrease charIndex
         charIndex--;
         // reduce mistakes only if the charIndex span contain incorrect class
         if (characters[charIndex].classList.contains("incorrect")) {
@@ -45,6 +51,16 @@ function initTyping () {
     characters[charIndex].classList.add("active");
 
     mistakeTag.innerText = mistakes;
+}
+
+function initTimer(){
+    //if timeLeft is greater than 0 then decrease the timeLeft else clear the time
+    if (timeLeft > 0) {
+        timeLeft--;
+        timeTag.innerText = timeLeft;
+    } else{
+        clearInterval(timer)
+    }
 }
 
 randomParagraph();
